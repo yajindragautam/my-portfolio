@@ -1,1 +1,48 @@
-<h1>Thi is home paage </h1>
+<!-- Include Head Start -->
+<%- include('./partials/_head.ejs') %> 
+<!-- Include Head End -->
+
+<body class="shock-body">
+
+    <!-- Include Preloader -->
+    <%- include('./partials/_preloader.ejs') %>
+     <!-- Popup Box -->
+     <%- include('./partials/_popupBox.ejs') %>
+     <!-- Header -->
+     <%- include('./partials/_header.ejs') %>
+     <!-- Main -->
+     <%- include('./partials/_main.ejs') %>
+    <!-- Modal -->
+    <%- include('./partials/_modal.ejs') %>
+  
+      <!-- Vertical Lines -->
+      <div class="vertical-lines diagonal scheme-2 primary">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 align-h-center">
+            <span class="line"></span>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 align-h-center">
+            <span class="line"></span>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 align-h-center">
+            <span class="line"></span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll to Top -->
+      <div class="side-widget to-right invert-color mix-blend-difference">
+        <div class="item align-v-bottom">
+          <a href="#" class="link hover-up">
+            <span class="widget float-icon">
+              <i class="fa-solid fa-arrow-up-long icon"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <%- include('./partials/_footer.ejs') %>   
+    
+    </body>
+  </html>

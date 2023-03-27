@@ -1,0 +1,10 @@
+<svg class="cursor-effect primary" width="220" height="220" viewBox="0 0 220 220">
+    <defs>
+      <filter id="cursor-effect-filter" x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox">
+        <feTurbulence type="fractalNoise" baseFrequency="0" numOctaves="1" result="warp"></feTurbulence>
+        <feOffset dx="-30" result="warpOffset"></feOffset>
+        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="20" in="SourceGraphic" in2="warpOffset"></feDisplacementMap>
+      </filter>
+    </defs>
+    <circle class="cursor-effect-inner" cx="110" cy="110" r="20"></circle>
+  </svg>
