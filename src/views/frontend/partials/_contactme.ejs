@@ -1,0 +1,95 @@
+<section id="contact" class="shock-section has-holder pt-4 pb-4">
+<div class="container max-w-85">
+  <div class="row g-5">
+    <div class="col-12 col-md-6 align-v-center">
+      <!-- Image -->
+      <div class="image-wrapper magnetic-effect">
+        <img src="/img/thumbs/contact.jpg" class="image bg-color primary-25" alt="This is an example description for this item." />
+      </div>
+    </div>
+    <div class="col-12 col-md-6 align-v-center">
+      <div class="holder">
+        <!-- Intro -->
+        <div class="basic-intro mb-2">
+          <h2 class="title text-style-5 black">
+            <span class="text-1 text-white text-outline">You Can</span>
+            <span class="text-2 text-white text-italic">Contact <mark class="animated-underline text-white primary-25">Me </mark>.</span>
+          </h2>
+        </div>
+        <!-- Form -->
+        <div class="form-area scheme-1 primary">
+          <form action="php/sender.php" class="form-fields needs-validation ajax-form" novalidate="novalidate">
+            <div class="form-row row">
+              <div class="form-col form-floating col-12 col-md-6">
+                <input type="text" name="name" id="InputFloatingName" class="form-control text-white" placeholder="Person name" required="required">
+                <label for="InputFloatingName" class="form-label">Person Name</label>
+                <div class="invalid-feedback">Please enter your name.</div>
+                <div class="valid-feedback">Looks good.</div>
+              </div>
+              <div class="form-col form-floating col-12 col-md-6">
+                <input type="text" name="company" id="InputFloatingCompany" class="form-control text-white" placeholder="Company name" required="required">
+                <label for="InputFloatingCompany" class="form-label">Company Name</label>
+                <div class="invalid-feedback">Please enter your company name.</div>
+                <div class="valid-feedback">Looks good.</div>
+              </div>
+            </div>
+            <div class="form-row row">
+              <div class="form-col form-floating col-12 col-md-6">
+                <input type="email" name="email" id="InputFloatingEmail" class="form-control text-white" placeholder="E-mail address" required="required">
+                <label for="InputFloatingEmail" class="form-label">Email address</label>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+                <div class="valid-feedback">Looks good.</div>
+              </div>
+              <div class="form-col form-floating col-12 col-md-6">
+                <input id="InputFloatingCity" name="city" class="form-control form-datalist text-white" list="InputFloatingCityOptions" placeholder="City / Province" required="required">
+                <label class="form-label">City / Province</label>
+                <datalist id="InputFloatingCityOptions">
+                  <option value="San Francisco"></option>
+                  <option value="New York"></option>
+                  <option value="Seattle"></option>
+                  <option value="Los Angeles"></option>
+                  <option value="Chicago"></option>
+                </datalist>
+                <div class="invalid-feedback">Please enter your city.</div>
+                <div class="valid-feedback">Looks good.</div>
+              </div>
+            </div>
+            <div class="form-row row">
+              <div class="form-col form-floating col-12">
+                <textarea name="message" id="InputFloatingMessage" class="form-control text-white primary form-textarea" rows="3" placeholder="Enter your message (optional)."></textarea>
+                <label for="InputFloatingMessage" class="form-label">Message</label>
+                <div class="valid-feedback">It's optional, but we'd like to know about it :)</div>
+              </div>
+            </div>
+            <div class="form-row row">
+              <div class="form-col col-12 col-md-6">
+                <div class="form-check">
+                  <input name="terms" id="InputCheckbox" class="form-check-input primary" type="checkbox" required="required">
+                  <label class="form-label text-white form-check-label" for="InputCheckbox">
+                    I agree to the <a href="#your-link" class="link black primary-hover text-white"><u>terms of use</u>.</a>
+                  </label>
+                  <div class="invalid-feedback text-white">Please accept the terms to continue.</div>
+                </div>
+              </div>
+              <div class="form-col col-12 col-md-6 align-h-right">
+                <!-- Button -->
+                <button class="button  arrow-button next scheme-1 primary">
+                  <span class="arrow text-white">
+                    <span class="item text-white"></span>
+                    <span class="item text-white"></span>
+                  </span>
+                  <span class="line"></span>
+                  <span class="text text-white"></span>
+                </button>
+              </div>
+            </div>
+            <input type="hidden" name="subject" value="Message sent through the contact form.">
+            <span class="form-alert  success">Your message was sent successful. Thanks.</span>
+            <span class="form-alert error">Sorry. We were unable to send your message.</span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
