@@ -1251,7 +1251,7 @@ button {
 /* #region Button Arrow */
 
 :root .arrow-button.scheme-1 {
-	--color-1: var(--black-color);
+	--color-1: #fff;
 }
 
 :root .arrow-button.scheme-2 {

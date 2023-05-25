@@ -5,7 +5,6 @@ const axios = require('axios');
 exports.home = async (req, res) => {
   try {
     const accessToken = process.env.TOKEN; // Retrieve the access token from the request query parameters
-    console.log('Checking token->',accessToken);
     // Make a request to the Instagram API to fetch your photos
     const response = await axios.get(`https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=${accessToken}`);
 
