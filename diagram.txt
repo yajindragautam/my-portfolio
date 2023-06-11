@@ -1,0 +1,90 @@
+User
+_id:
+fullName: String
+birthDay: String
+email: String
+image:String
+phone: String
+address:Strng
+nationality: String
+skills: Array with percent
+description: String
+otp:String
+otpExpiry:Date
+password:String
+
+Education
+_id
+userId: FK
+title: String
+description: String
+schoolName: String
+grade: String
+duration: String
+certificateUrl: String
+
+Experiances
+_id
+userId: FK
+title: String
+description: String
+sourceName: String
+duration: String
+certificateUrl: String
+currentlyWorking: Boolean
+
+Course
+_id
+userId: FK
+title: String
+description: String
+sourceName: String
+duration: String
+certificateUrl: String
+complete: Boolean
+
+
+Projects:
+id:
+userId:FK
+projectName: Strig
+stack: String
+image: String
+technology: String
+team:String
+startedAt: Date
+completeAt:Date
+status: Boolean
+demoUrl: String
+
+Blogs:
+id:
+userId:FK
+title: String
+content: String
+redirectUrl: String
+
+Contact Me:
+_id
+firstName: String;
+lastName: String
+email: String
+city: String
+message: String
+agreeTerms: Boolean
+
+Social Links
+id:
+userId:FK
+siteName:
+url:
+
+
+
+
+
+
+
+
+
+
