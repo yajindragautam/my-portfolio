@@ -1,6 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const Schema = mongoose.Schema;
 var UserSchema = new Schema({
@@ -24,24 +25,29 @@ var UserSchema = new Schema({
     last_accessed_country: {type: String, default: ''},
 });
 
-/**
- * Hash the password and sms token for security.
- */
 
-// UserSchema.pre('save', function (next) {
-//     var user = this;
-//     if (!user.isModified('password')) return next();
-//     bcrypt.genSalt(10, (err, salt) => {
-//         bcrypt.hash(user.password, salt, (err, hash) => {
-//             user.password = hash;
-//             next();
-//         });
-//     });
-// });
+// Hash the password and sms token for security.
+ 
+UserSchema.pre('save', function (next) {
+    var user = this;
+    if (!user.isModified('password')) return next();
+    bcrypt.genSalt(12, (err, salt) => {
+        bcrypt.hash(user.password, salt, (err, hash) => {
+            user.password = hash;
+            next();
+        });
+    });
+});
 
-/**
- * Check the user's password
- */
+// Compare Password
+UserSchema.methods.validatePassword = async function (password, hashed) {
+    try {
+        const isMatch = await bcrypt.compare(password, hashed);
+        return isMatch;
+      } catch (error) {
+        throw new Error('Password comparison failed');
+    }
+}
 
 
 

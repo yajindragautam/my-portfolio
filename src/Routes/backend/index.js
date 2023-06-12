@@ -1,9 +1,12 @@
 const express = require('express');
 const Route = express.Router();
-const {loadLoginPage,loadForgotPassPage,loadVerifyPassPage,loadResetPassPage} = require('../../Controllers/authControllers');
+const {loadLoginPage,loadForgotPassPage,loadVerifyPassPage,loadResetPassPage,login} = require('../../Controllers/authControllers');
 
 //Fetch Login Routes
 Route.get('/yg_admin',loadLoginPage);
+
+//POST login
+Route.post("/login",login);
 
 // Get Forgot Password
 Route.get('/forgot',loadForgotPassPage)

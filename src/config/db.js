@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const url = process.env.MONGOURL
+const url = process.env.ENVTRONMENT === process.env.MONGOURL ? "" : process.env.MONGOURLREMOTE;
+
 try{
   mongoose.Promise = global.Promise;
   mongoose.connect(url, 
@@ -9,7 +10,7 @@ try{
     connectTimeoutMS:60000,
   });
 
-  console.log("Connected successfully to server");
+  console.log("MongoDB Connected successfully");
 }catch(err){
   console.log(err);
 }

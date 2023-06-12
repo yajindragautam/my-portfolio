@@ -39,7 +39,8 @@
 						<!--begin::Wrapper-->
 						<div class="w-lg-500px p-10">
 							<!--begin::Form-->
-							<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="../../demo1/dist/index.html" action="#">
+							<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" 	method="POST"
+							 action="/login">
 								<!--begin::Heading-->
 								<div class="text-center mb-11">
 									<!--begin::Title-->
@@ -75,15 +76,10 @@
 								<!--end::Wrapper-->
 								<!--begin::Submit button-->
 								<div class="d-grid mb-10">
-									<button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
-										<!--begin::Indicator label-->
-										<span class="indicator-label">Sign In</span>
-										<!--end::Indicator label-->
-										<!--begin::Indicator progress-->
-										<span class="indicator-progress">Please wait...
-										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-										<!--end::Indicator progress-->
-									</button>
+										<button type="submit"  class="btn btn-primary">
+											Sign In
+										</button>
+								
 								</div>
 								<!--end::Submit button-->
 							
