@@ -1,0 +1,3 @@
+
+// User Seeder
+require("./userSeeder");

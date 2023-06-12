@@ -4,4 +4,5 @@ const app = require('../app');
 
 module.exports = (app)=>{
     app.use(require('./frontend'));
+    app.use(require('./backend'));
 }

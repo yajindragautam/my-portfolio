@@ -6,9 +6,13 @@ const session = require("express-session");
 const ejs = require("ejs");
 const path = require("path");
 
+
 const loadExpress = {};
 loadExpress.init = (app) =>{
     //Globle Middlewares
+const{mongoose} = require("../config/db"); 
+// Load seeder
+require("../seeds/index")
 // Resources path middleware
 app.use(express.static(path.join(__dirname, "../../public")));
 // Template Engine Middleware
@@ -32,6 +36,7 @@ app.use(
     },
   })
 );
+
 
 // Used Routes
 require('../Routes')(app);
