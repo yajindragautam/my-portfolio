@@ -48,13 +48,16 @@ exports.login = async(req,res) =>{
     })
     const checkUser = await User.findOne({email:data.email});
     if(!checkUser){
-      throw new Error("Sorry, You are not registered..!");
+      req.flash("error_msg","Sorry, You are not registered..!")
+      return res.redirect("back");
     }
-    const matchPass = await data.validatePassword(password,checkUser.password);
+    const matchPass = await data.validatePassword(data.password,checkUser.password);
     if(matchPass !== true){
-      throw new Error("Invalid password or email..!");      
+      req.flash("error_msg","Invalid password or email..!")
+      return res.redirect("back");
     }
-    console.log("checked matched pass:", matchPass);
+    req.session.isLogged = true;
+    return res.redirect("/dashboard");
 
   } catch (err) {
     console.log(err);
