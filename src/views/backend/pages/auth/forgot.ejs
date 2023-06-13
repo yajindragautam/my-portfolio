@@ -37,9 +37,15 @@
 					<!--begin::Form-->
 					<div class="d-flex flex-center flex-column flex-lg-row-fluid">
 						<!--begin::Wrapper-->
+
+						<!-- Include Error Shower -->
+    					<%- include('../../errors/error.ejs') %>
+
 						<div class="w-lg-500px p-10">
+
+
 							<!--begin::Form-->
-							<form class="form w-100" novalidate="novalidate" id="kt_password_reset_form" data-kt-redirect-url="../../demo1/dist/authentication/layouts/corporate/new-password.html" action="#">
+							<form accept="/forgot" method="POST" class="form w-100" novalidate="novalidate" id="kt_password_reset_form">
 								<!--begin::Heading-->
 								<div class="text-center mb-10">
 									<!--begin::Title-->
@@ -58,15 +64,9 @@
 								</div>
 								<!--begin::Actions-->
 								<div class="d-flex flex-wrap justify-content-center pb-lg-0">
-									<button type="button" id="kt_password_reset_submit" class="btn btn-primary me-4">
-										<!--begin::Indicator label-->
-										<span class="indicator-label">Submit</span>
-										<!--end::Indicator label-->
-										<!--begin::Indicator progress-->
-										<span class="indicator-progress">Please wait...
-										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-										<!--end::Indicator progress-->
-									</button>
+									<button type="submit"  class="btn btn-primary">
+											Submit
+										</button>
 									<a href="/yg_admin" class="btn btn-light">Cancel</a>
 								</div>
 								<!--end::Actions-->

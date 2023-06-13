@@ -23,6 +23,9 @@ var UserSchema = new Schema({
     last_accessed_city: {type: String, default: ''},
     password_method: {type: String, default: ''},
     last_accessed_country: {type: String, default: ''},
+    createdAt:{type:Date, default:Date.now},
+    updatedAt:{type:Date, default:Date.now},
+    deletedAt:{type:Date, default:Date.now},
 });
 
 
@@ -39,10 +42,12 @@ UserSchema.pre('save', function (next) {
     });
 });
 
+
 // Compare Password
 UserSchema.methods.validatePassword = async function (password, hashed) {
     try {
         const isMatch = await bcrypt.compare(password, hashed);
+        console.log("Check password matched :",isMatch);
         return isMatch;
       } catch (error) {
         throw new Error('Password comparison failed');

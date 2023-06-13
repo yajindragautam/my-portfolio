@@ -1,5 +1,5 @@
 const isLoggedIn = async (req, res, next) => {
-  if (req.session.user) {
+  if (req.session.isLogged) {
     return next();
   } else {
     if (req.xhr) {
