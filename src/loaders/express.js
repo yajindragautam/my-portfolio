@@ -3,9 +3,11 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const session = require("express-session");
+const methodOverride = require("method-override");
 const ejs = require("ejs");
 var flash = require('connect-flash');
 const path = require("path");
+
 
 
 const loadExpress = {};
@@ -24,6 +26,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 app.use(cookieParser());
+// override with different headers; last one takes precedence
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride(function (req, res) {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method
+    delete req.body._method
+    return method
+  }
+}))
 
 
 app.use(

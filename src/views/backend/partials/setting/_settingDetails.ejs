@@ -11,7 +11,8 @@
     <!--begin::Content-->
     <div id="kt_account_settings_profile_details" class="collapse show">
         <!--begin::Form-->
-        <form method="POST" action="/profile-setting"     enctype="multipart/form-data" id="kt_account_profile_details_form" class="form">
+        <form method="POST" action="/profile-setting" class="form"  enctype="multipart/form-data" autocomplete="off">
+            <input type="hidden" name="_method" value="PUT">
             <!--begin::Card body-->
             <div class="card-body border-top p-9">
                 <!--begin::Input group-->
@@ -31,7 +32,7 @@
                                 <i class="bi bi-pencil-fill fs-7"></i>
                                 <!--begin::Inputs-->
                                 <input type="file" name="image" accept=".png, .jpg, .jpeg" />
-                                <input type="hidden" name="avatar_remove" />
+                        
                                 <!--end::Inputs-->
                             </label>
                             <!--end::Label-->
@@ -125,7 +126,18 @@
                     <!--end::Label-->
                     <!--begin::Col-->
                     <div class="col-lg-8 fv-row">
-                        <input type="text" name="earnng" class="form-control form-control-lg form-control-solid" placeholder="Company website" value="<%= data?.earning ? data.earning : '' %>" />
+                        <input type="number" name="earning" class="form-control form-control-lg form-control-solid" placeholder="Company website" value="<%= data?.earning ? data.earning : '' %>" />
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">Success Rate</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <input type="string" name="success_rate" max="100" min="1" class="form-control form-control-lg form-control-solid" placeholder="Company website" value="<%= data?.success_rate ? data.success_rate : '1' %>" />
                     </div>
                     <!--end::Col-->
                 </div>

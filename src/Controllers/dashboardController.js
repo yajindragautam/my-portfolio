@@ -50,7 +50,11 @@ exports.updateProfileIno = async(req, res) => {
             nationality: req.body.phone,
             earning: req.body.earning,
             success_rate: req.body.success_rate,
+            
         }
+        console.log("checking user data >",userData);
+        console.log('check image file ',req.file);
+        console.log('check image files ',req.files);
         const data = await User.findOne({email:"yajindragtm@gmail.com"});
         const bradcrum ={
             title:"Account Setting",
