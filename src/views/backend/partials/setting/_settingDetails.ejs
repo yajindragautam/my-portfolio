@@ -23,9 +23,10 @@
                     <!--begin::Col-->
                     <div class="col-lg-8">
                         <!--begin::Image input-->
+                        <% const url = `/uploads/profile/${data.image}` %>
                         <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('/backend/assets/media/svg/avatars/blank.svg')">
                             <!--begin::Preview existing avatar-->
-                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/300-1.jpg)"></div>
+                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('<%= data.image ? url : "/backend/assets/media/avatars/300-1.jpg" %> ")"></div>
                             <!--end::Preview existing avatar-->
                             <!--begin::Label-->
                             <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
@@ -87,11 +88,41 @@
                     <!--end::Label-->
                     <!--begin::Col-->
                     <div class="col-lg-8 fv-row">
-                        <input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="<%= data?.company ? data.company : '' %>" />
+                        <input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="<%= data.company ? data.company : '' %>" />
                     </div>
                     <!--end::Col-->
                 </div>
                 <!--end::Input group-->
+
+                 <!--begin::Input group-->
+                 <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Bio</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <input type="text" name="bio" class="form-control form-control-lg form-control-solid" placeholder="bio name" value="<%= data?.bio ? data.bio : '' %>" />
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">About Me</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <textarea name="aboutme" class="form-control form-control-lg form-control-solid"   rows="6" placeholder="About Me" >
+                            <%= data?.aboutme ? data.aboutme : '' %>
+                        </textarea>
+                        <!-- <input type="text" name="aboutme" class="form-control form-control-lg form-control-solid" placeholder="About Me" value="<%= data?.aboutme ? data.aboutme : '' %>" /> -->
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
                 <!--begin::Input group-->
                 <div class="row mb-6">
                     <!--begin::Label-->

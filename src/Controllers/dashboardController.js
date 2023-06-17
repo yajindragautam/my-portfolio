@@ -47,16 +47,18 @@ exports.updateProfileInfo = async(req, res) => {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             company: req.body.company,
+            bio: req.body.bio,
+            aboutme: req.body.aboutme,
             phone: req.body.phone,
             nationality: req.body.phone,
             earning: req.body.earning,
             success_rate: req.body.success_rate,
-            
         }
-
-        const newName = uploadFileToPath({file: req.files.image, absDir:'profile/'});
-        console.log('File after name change : ',newName);
-        const data = await User.findOne({email:"yajindragtm@gmail.com"});
+        if(req.files?.image){
+            const newName = uploadFileToPath({file: req.files.image, absDir:'profile/'});
+            userData.image = newName;
+        }
+        const data = await User.findOneAndUpdate({email:"yajindragtm@gmail.com"}, userData);
         const bradcrum ={
             title:"Account Setting",
             url: "/profile-setting",

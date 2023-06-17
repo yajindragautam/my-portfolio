@@ -47,7 +47,6 @@ const uploadFileToPath = (uploadConfig) => {
     replacePreviousFile = {},
     renameFile= true
   } = uploadConfig;
-  console.log(file);
   let fileName = "";
   const dir = rootDir + absDir;
   if (file) {
@@ -63,7 +62,6 @@ const uploadFileToPath = (uploadConfig) => {
       fileName = `${generateRandomString(8)}`;
       fileName = `${fileName.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}.${ext}`;
     }
-    console.log('Checking direc :',dir + fileName);
     image.mv(dir + fileName, (err) => {
       if (err) {
         fileName = "";

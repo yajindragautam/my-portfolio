@@ -9,6 +9,8 @@ var UserSchema = new Schema({
     lastname: {type: String},
     email: {type: String, unique: true, index: true, default:"yajindragtm@gmail.com"},
     username: {type: String, unique: true, index: true},
+    bio: {type: String,default:''},
+    aboutme: {type: String,default:''},
     image: {type: String, default: ''},
     profile_image: {type: String, default: ''},
     phone:{type:String, unique:true,index:true},
