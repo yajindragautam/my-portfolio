@@ -1,4 +1,5 @@
 const User = require("../models/users");
+const {uploadFileToPath} = require("../helpers/fileHelpers");
 
 // Render login page
 exports.loadDashboard = (req, res) => {
@@ -40,7 +41,7 @@ exports.loadProfileSetting = async(req, res) => {
     }
 };
 
-exports.updateProfileIno = async(req, res) => {
+exports.updateProfileInfo = async(req, res) => {
     try {
         const userData = {
             firstname: req.body.firstname,
@@ -52,9 +53,9 @@ exports.updateProfileIno = async(req, res) => {
             success_rate: req.body.success_rate,
             
         }
-        console.log("checking user data >",userData);
-        console.log('check image file ',req.file);
-        console.log('check image files ',req.files);
+
+        const newName = uploadFileToPath({file: req.files.image, absDir:'profile/'});
+        console.log('File after name change : ',newName);
         const data = await User.findOne({email:"yajindragtm@gmail.com"});
         const bradcrum ={
             title:"Account Setting",

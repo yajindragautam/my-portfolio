@@ -5,7 +5,8 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const methodOverride = require("method-override");
 const ejs = require("ejs");
-var flash = require('connect-flash');
+const flash = require('connect-flash');
+const fileUpload = require("express-fileupload");
 const path = require("path");
 
 
@@ -37,6 +38,7 @@ app.use(methodOverride(function (req, res) {
     return method
   }
 }))
+app.use(fileUpload());
 
 
 app.use(

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const url = process.env.ENVTRONMENT === process.env.MONGOURL ? "" : process.env.MONGOURLREMOTE;
+const url = process.env.ENVTRONMENT ===  "development" ? process.env.MONGOURL : process.env.MONGOURLREMOTE;
 
 try{
   mongoose.Promise = global.Promise;
