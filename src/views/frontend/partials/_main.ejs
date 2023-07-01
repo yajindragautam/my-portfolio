@@ -20,13 +20,15 @@
                 </h2>
                 <!-- Srings -->
                 <div id="typed-strings">
-                  <span>Yajindra Gautam</span>
-                  <span>Software Developer</span>
+                  <span><%= data.firstname ? data.firstname : '' %> <%= data.lastname ? data.lastname : '' %></span>
+                  <span><%= data.job ? data.job : '' %></span>
                   <!-- <span>Nodejs Developer</span> -->
                   <span>Programmer</span>
                 </div>  
                 <div class="description text-style-12 gray">
-                    <p style="font-size:25px;font-weight:800;color:#fff ;"><strong>A passionate backend Web Developer.With more then 37k instagram followers learning web development. Founder of Codewithyaji.</strong></p>
+                    <p style="font-size:25px;font-weight:800;color:#fff ;"><strong>
+                      <%= data.bio ? data.bio : '' %>
+                    </strong></p>
          
                 </div>
               </div>

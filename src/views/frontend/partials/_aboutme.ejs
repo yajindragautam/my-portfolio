@@ -6,7 +6,9 @@
          <span class="text-1 text-style-5">About Me</span>
         </h2>
         <br>
-        <p style="font-size:18px;font-weight:800;color:#fff ; padding: 2rem;line-height: 35px;" class="font-weight-bold"><strong>Hi! My name is Yajindra Gautam. I am backend developer, and I'm very passionate and dedicated to my work. With 2 years experience as a backend developer with good kowledge of frontend as well, I have acquired the skills and knowledge necessary to make your project a success. Not only that I love teaching people so I have my instagram page named @codewithyaji whith more then 30k followers. Where I daily post related to web development</strong></p>
+        <p style="font-size:18px;font-weight:800;color:#fff ; padding: 2rem;line-height: 35px;" class="font-weight-bold"><strong>
+          <%= data.aboutme ? data.aboutme : '' %>
+        </strong></p>
         <div class="description">
         </div>
       </div>
@@ -45,17 +47,17 @@
               <!-- Button -->
               <div class="button-wrapper align-h-center hover-up-down">
                 <span class="button outline w-100 rounded primary-25 primary-25-hover">
-                  <span class="button-text white white-hover">Name</span>  <span class="button-text white white-hover"> Yajindra Gautam</span>
+                  <span class="button-text white white-hover">Name</span>  <span class="button-text white white-hover"><%= data.firstname ? data.firstname : '' %> <%= data.lastname ? data.lastname : '' %></span>
                   <i class="fa-solid fa-arrow-right button-icon white white-hover"></i>
                 </span>
-                <span class="button outline w-100 rounded primary-25 primary-25-hover">
+                <!-- <span class="button outline w-100 rounded primary-25 primary-25-hover">
                   <span class="button-text white white-hover">Birthday</span>  <span class="button-text white white-hover">September 20, 20002</span>
                   <i class="fa-solid fa-arrow-right button-icon white white-hover"></i>
-                </span>
+                </span> -->
               </div>
               <div class="button-wrapper align-h-center hover-up-down">
                 <span class="button outline w-100 rounded primary-25 primary-25-hover">
-                  <span class="button-text white white-hover">Email</span>  <span class="button-text white white-hover">yajindragtm@gmail.com</span>
+                  <span class="button-text white white-hover">Email</span>  <span class="button-text white white-hover"><%= data.email ? data.email : '' %></span>
                   <i class="fa-solid fa-arrow-right button-icon white white-hover"></i>
                 </span>
                 <span class="button outline w-100 rounded primary-25 primary-25-hover">
@@ -65,17 +67,17 @@
               </div>
               <div class="button-wrapper align-h-center hover-up-down">
                 <span class="button outline w-100 rounded primary-25 primary-25-hover">
-                  <span class="button-text white white-hover">Address</span>  <span class="button-text white white-hover">Tikathali, Lalitpur, Nepal</span>
+                  <span class="button-text white white-hover">Address</span>  <span class="button-text white white-hover"><%= data.address ? data.address : '' %></span>
                   <i class="fa-solid fa-arrow-right button-icon white white-hover"></i>
                 </span>
                 <span class="button outline w-100 rounded primary-25 primary-25-hover">
-                  <span class="button-text white white-hover">Nationality</span>  <span class="button-text white white-hover">Nepal</span>
+                  <span class="button-text white white-hover">Nationality</span>  <span class="button-text white white-hover"><%= data.nationality ? data.nationality : '' %></span>
                   <i class="fa-solid fa-arrow-right button-icon white white-hover"></i>
                 </span>
               </div>
             </div>
             <!-- Link -->
-            <a href="#your-link" class="full-link"></a>
+            <a href="/" class="full-link"></a>
           </div>
         </div>
       </div>

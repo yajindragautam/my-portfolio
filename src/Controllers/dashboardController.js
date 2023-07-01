@@ -2,9 +2,15 @@ const User = require("../models/users");
 const {uploadFileToPath} = require("../helpers/fileHelpers");
 
 // Render login page
-exports.loadDashboard = (req, res) => {
+exports.loadDashboard = async(req, res) => {
     try {
-        return res.render('backend/pages/dashboard.ejs');
+        const bradcrum ={
+            title:"Dashboard",
+            url: "/dashboard",
+            short: "dashboard"
+        }
+        const data = await User.findOne({email:"yajindragtm@gmail.com"});
+        return res.render('backend/pages/dashboard.ejs',{data,bradcrum});
     } catch (err) {
         console.log(err);        
     }

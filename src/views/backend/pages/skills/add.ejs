@@ -1,5 +1,5 @@
  <!--Include Head--> 
- <%- include('../partials/_head.ejs') %>  
+ <%- include('../../partials/_head.ejs') %>  
 	
 	<!--begin::Body-->
 	<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
@@ -12,14 +12,14 @@
 			<div class="app-page flex-column flex-column-fluid" id="kt_app_page">
 
 				<!--begin::Header-->
-                <%- include('../partials/_header.ejs') %>
+                <%- include('../../partials/_header.ejs') %>
 				<!--end::Header-->
                 
 				<!--begin::Wrapper-->
 				<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
 
 					<!--begin::Sidebar-->
-					    <%- include('../partials/_sidebar.ejs') %>
+					    <%- include('../../partials/_sidebar.ejs') %>
 					<!--end::Sidebar-->
 
 					<!--begin::Main-->
@@ -27,7 +27,7 @@
 						<!--begin::Content wrapper-->
 						<div class="d-flex flex-column flex-column-fluid">
 							<!--begin::Toolbar-->
-							<%- include('../partials/_breadcrumb.ejs') %>
+							<%- include('../../partials/_breadcrumb.ejs') %>
 							<!--end::Toolbar-->
 
 							<!--begin::Content-->
@@ -35,29 +35,21 @@
 								<!--begin::Content container-->
 								<div id="kt_app_content_container" class="app-container container-xxl">
 
-									<!--begin::Navbar-->
-									<%- include('../partials/overview/_aboutNav.ejs') %>
-									<!--end::Navbar-->
-
-									<!--begin::details View-->
-
 									<!--begin::Basic info-->
-									<%- include('../partials/setting/_settingDetails.ejs') %>
+									<div class="card mb-5 mb-xl-10">
+    									<!--begin::Card header-->
+    									<div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+    									    <!--begin::Card title-->
+    									    <div class="card-title m-0">
+    									        <h3 class="fw-bold m-0"><%= bradcrum.title ? bradcrum?.title : "Create Skills" %></h3>
+    									    </div>
+    									    <!--end::Card title-->
+    									</div>
+    									<!--begin::Card header-->
+
+										<%- include('./partials/form.ejs') %>
+									</div>
 									<!--end::Basic info-->
-
-									<!--begin::Sign-in Method-->
-									<%- include('../partials/setting/_signIn.ejs') %>
-									<!--end::Sign-in Method-->
-
-									<!--begin::Connected Accounts-->
-									<%- include('../partials/setting/_connectAccounts.ejs') %>
-									<!--end::Connected Accounts-->
-
-
-									<!--begin::Deactivate Account-->
-									<%- include('../partials/setting/_deactivate.ejs') %>
-									<!--end::Deactivate Account-->
-									<!--end::details View-->
 
 								</div>
 								<!--end::Content container-->
@@ -66,7 +58,7 @@
 						</div>
 						<!--end::Content wrapper-->
 						<!--begin::Footer-->
-						<%- include('../partials/_footer.ejs') %>  
+						<%- include('../../partials/_footer.ejs') %>  
 						<!--end::Footer-->
 					</div>
 					<!--end:::Main-->
@@ -80,16 +72,16 @@
 
 
 		<!--begin::Activities drawer-->
-        <%- include('../partials/_activities.ejs') %>
+        <%- include('../../partials/_activities.ejs') %>
 		<!--end::Activities drawer-->
 
 		<!--begin::Chat drawer-->
-            <%- include('../partials/_chat.ejs') %>
+            <%- include('../../partials/_chat.ejs') %>
 		<!--end::Chat drawer-->
         
 
 		<!--begin::Scrolltop-->
-        <%- include('../partials/_scrolltop.ejs') %>
+        <%- include('../../partials/_scrolltop.ejs') %>
 		<!--end::Scrolltop-->
 
 

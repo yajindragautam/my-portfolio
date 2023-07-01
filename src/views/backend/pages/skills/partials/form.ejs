@@ -1,0 +1,66 @@
+    <!--begin::Content-->
+    <div id="kt_account_settings_profile_details" class="collapse show">
+        <!--begin::Form-->
+        <form method="POST" action="/skills" class="form"  enctype="multipart/form-data" autocomplete="off">
+            <input type="hidden" name="_method" value="POST">
+            <!--begin::Card body-->
+            <div class="card-body border-top p-9">
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Name</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <input type="text" name="name" class="form-control form-control-lg form-control-solid" placeholder="Skills name" value="<%= data.name ? data.company : '' %>" />
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">
+                        <span class="required">Percentage</span>
+                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Phone number must be active"></i>
+                    </label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <input type="number" name="percentage" class="form-control form-control-lg form-control-solid" placeholder="Skill Percentage" value="<%= data?.percentage ? data.percentage : '' %>" />
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+                   <!--begin::Input group-->
+                   <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">Status</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <label class="form-check-label" for="googleswitch"></label>
+                        <div class="d-flex justify-content-end">
+                            <div class="form-check form-check-solid form-check-custom form-switch">
+                                <input class="form-check-input w-45px h-30px" type="checkbox"   name="status" />
+                                <label class="form-check-label" for="googleswitch"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+               
+            </div>
+            <!--end::Card body-->
+            <!--begin::Actions-->
+            <div class="card-footer d-flex justify-content-end py-6 px-9">
+                <button type="reset" class="btn btn-light btn-active-light-primary me-2">Discard</button>
+                <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Create Skill</button>
+            </div>
+            <!--end::Actions-->
+        </form>
+        <!--end::Form-->
+    </div>
+    <!--end::Content-->
